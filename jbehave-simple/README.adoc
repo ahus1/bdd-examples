@@ -1,0 +1,23 @@
+= Example for JBehave
+
+== About
+
+This show an almost simple example of http://www.jbehave.org[JBehave^]
+
+== Features
+
+The following features are shown in this example (see `Calculator.story`,
+`CalculatorSteps.java` and `CalculatorStories.java`):
+
+. your steps look less regexy than in cucumber
+. the `JUnitReportingRunner` in `CalculatorStories.java` gives you a better feedback
+  when you run it from you favourite IDE.
+. All classes and resources have been placed inside the `src/test` folder
+
+== How to run
+
+Install maven and run as follows:
+
+   maven clean test
+
+To look at the results, open the folder `target/jbehave/view/index.html`.
