@@ -2,6 +2,7 @@ package de.ahus1.bdd;
 
 import de.ahus1.bdd.calculator.CalculatorSUT;
 import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
@@ -50,33 +51,6 @@ public class FeatureCalculator {
          * then: verifies observable outcomes by the user
 		 */
         then(theCalculator).shows(4);
-    }
-
-    @RunWith(Parameterized.class)
-    public static class AddSet {
-        // The Fixture
-        private CalculatorSUT theCalculator = new CalculatorSUT();
-
-        private long val1, val2, result;
-
-        public AddSet(long val1, long val2, long result) {
-            this.val1 = val1;
-            this.val2 = val2;
-            this.result = result;
-        }
-
-        @Parameters(name = "Sum of {0} and {1} should be {2}")
-        public static Collection<?> values() {
-            return Arrays.asList(new Object[][]
-                    {{1, 1, 2}, {2, 2, 4}, {3, 3, 6}});
-        }
-
-        @Test
-        public void scenarioAdd() {
-            given(theCalculator).isInitializedWith(val1);
-            when(theCalculator).adds(val2);
-            then(theCalculator).shows(result);
-        }
     }
 
     @Test
