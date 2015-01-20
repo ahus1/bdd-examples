@@ -1,0 +1,23 @@
+= Example for Gwen with TestNG
+
+== About
+
+This show an almost simple example of https://github.com/shazam/gwen[Gwen^]
+with TestNG
+
+== Features
+
+The following features are shown in this example (see `FeatureCalculator.java`):
+
+. you see simple and parameterized test cases
+. you find all test steps in `CalculatorSUT.java`
+. each scenario will show up as one item in JUnit test result
+. parameterized tests have just a list of parameters
+
+== How to run
+
+Install maven and run as follows:
+
+   maven clean test
+
+To look at the results, open the folder `/target/surefire-reports/index.html`.
