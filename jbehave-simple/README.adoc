@@ -18,6 +18,6 @@ The following features are shown in this example (see `Calculator.story`,
 
 Install maven and run as follows:
 
-   maven clean test
+   mvn clean test
 
 To look at the results, open the folder `target/jbehave/view/index.html`.

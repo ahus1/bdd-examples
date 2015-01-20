@@ -21,6 +21,6 @@ There is another class that is parameterized (see `FeatureCalculatorParameterize
 
 Install maven and run as follows:
 
-   maven clean test
+   mvn clean test
 
 To look at the results, open the folder `/target/surefire-reports/index.html`.

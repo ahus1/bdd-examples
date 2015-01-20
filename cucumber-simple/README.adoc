@@ -1,0 +1,20 @@
+= Example for Gwen with JUnit
+
+== About
+
+This show an example on how to use http://cukes.info/[Cucumber JVM^].
+
+== Features
+
+The following features are shown in this example (see `CalculatorTest.java`,
+`CalculatorSteps.java` and `Calculator.feature`).
+
+== How to run
+
+Install maven and run as follows:
+
+   mvn clean test
+
+To look at the results, open the folder `target/cucumber/index.html`.
+
+Alternatively, you can run `Calculator.feature` as a Unit test from you IDE.
