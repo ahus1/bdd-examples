@@ -1,0 +1,21 @@
+= Example for ScalaTest
+
+== About
+
+This show an almost simple example of http://www.scalatest.org[ScalaTest^]
+
+== Features
+
+The following features are shown in this example (see `CalculatorFeature.scala`):
+
+. you can have a nested Feature/Scenario setup
+. you can show some markdown at the intro using `markup` prefix
+. using `Expecty` you get power assertions
+
+== How to run
+
+Install maven and run as follows:
+
+   maven clean test
+
+To look at the results, open the folder `target/html/scalatest`.
