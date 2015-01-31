@@ -1,0 +1,35 @@
+= Example for Gwen with JUnit
+
+== About
+
+This show an almost simple example of https://github.com/shazam/gwen[Gwen^]
+with http://www.scalatest.org[ScalaTest^].
+
+This is still *work in progress* (see 'Open Issues' below).
+
+== Features
+
+The following features are shown in this example (see `CalculatorFeature.scala`):
+
+. you find all test steps in `CalculatorActor.java`, `CalculatorArranger.java` and `CalculatorAsserter.java`.
+. each scenario will show up as one item in JUnit test result
+. when you compare `CalculatorFeature.scala` with its JUnit variant it is a lot easier to read.
+
+== Disadvantages
+
+. When you add new unknown steps to the given/when/then elements, the Scala IDE doesn't
+  provide you with a quick fix to create the necessary method like in Java.
+
+== Open Issues
+
+. As I didn't find out how to make Gwen's static import work I created a `GwenTrait.scala` instead.
+. The traits for given/when/then still use brackets - I don't have the Scala skills
+  to make this work without the brackets.
+
+== How to run
+
+Install maven and run as follows:
+
+   mvn clean test
+
+To look at the results, open the folder `/target/html/scalatest/index.html`.
