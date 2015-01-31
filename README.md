@@ -9,7 +9,8 @@ There is a longer article (in German) covering [benefits of Gwen](http://www.hei
   * Gwen (by Shazam)
     * [Gwen w/ JUnit](gwen-calculator-junit)
     * [Gwen w/ TestNG](gwen-calculator-testng)
-    * [Gwen Arquillian](gwen-arquillian)
+    * [Gwen w/ Arquillian](gwen-arquillian)
+    * [Gwen w/ ScalaTest](gwen-calculator-scalatest)
   * [JBehave](jbehave-simple)
   * [ScalaTest w/ FeatureSpec](scalatest-featurespec)
 
