@@ -2,7 +2,7 @@
 
 == About
 
-This show an almost simple example of http://www.scalatest.org[ScalaTest^]
+This show an almost simple example of http://www.scalatest.org[ScalaTest^].
 
 == Features
 

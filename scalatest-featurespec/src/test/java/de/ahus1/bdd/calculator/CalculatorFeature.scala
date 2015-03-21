@@ -2,7 +2,7 @@ import de.ahus1.bdd.calculator.Calculator
 import org.expecty.Expecty
 import org.scalatest._
 
-class CalculatorFeature extends FeatureSpec with GivenWhenThen {
+class CalculatorFeature extends FeatureSpec with GivenWhenThen with Matchers{
 
   markup { """
 In Order to avoid *stupid* mistakes
@@ -13,7 +13,7 @@ I use a calculator.
            """
   }
 
-  feature("Math") {
+  feature("Math"){
 
     val expect = new Expecty();
 
@@ -30,7 +30,7 @@ I use a calculator.
 
       Then("the calculator shows 9");
       expect {
-        c.getState() == 9l;
+        c.getState equals 9l;
       }
 
     }
@@ -41,10 +41,10 @@ I use a calculator.
       val c = new Calculator();
 
       When("the calculator adds 5");
-      c.add(5);
+      c add 5;
 
       When("the calculator multiplies by two");
-      c.multiplyBy(2);
+      c multiplyBy 2;
 
       Then("the calculator shows 9");
       expect {
