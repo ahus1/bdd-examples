@@ -35,11 +35,13 @@
             <groupId>com.shazam</groupId>
             <artifactId>gwen</artifactId>
             <version>1.0.2</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.easytesting</groupId>
             <artifactId>fest-assert</artifactId>
             <version>1.4</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.arquillian.junit</groupId>
