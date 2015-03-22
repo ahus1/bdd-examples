@@ -1,0 +1,32 @@
+:imagesdir: src/doc
+
+= Example for JBehave
+
+== About
+
+This show an almost simple example of http://jgiven.org/[JGiven^]
+
+== Features
+
+The following features are shown in this example (see `FeatureCalculator.java`):
+
+. you use standard `@Test` syntax as you would use for JUnit
+. you use a fluent syntax with reusable states in separate classes
+. state between the given/when/then stages is shared between objects using injection
+. nice support for not yet implemented scenarios using `@NotImplementedYet` annotation
+. very nice HTML output of the report
+
+== How to run
+
+Install maven and run as follows:
+
+   mvn clean test
+   mvn jgiven:report
+
+To look at the results, open the folder `target/jgiven-reports/html` to see <<report>>.
+
+== Example Result
+
+[[report]]
+.Example HTML reports created by JGiven
+image::report_screenshot.png[JGiven Report]
