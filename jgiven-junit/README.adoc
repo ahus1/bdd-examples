@@ -1,6 +1,6 @@
 :imagesdir: src/doc
 
-= Example for JBehave
+= Example for JGiven
 
 == About
 
