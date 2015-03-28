@@ -10,7 +10,6 @@ import org.junit.runners.Parameterized.Parameters;
 import java.util.Arrays;
 import java.util.Collection;
 
-// tag::simpleaddition[]
 import static com.shazam.gwen.Gwen.given;
 import static com.shazam.gwen.Gwen.when;
 import static com.shazam.gwen.Gwen.then;
@@ -32,8 +31,6 @@ public class FeatureCalculator {
         when(theCalculator).adds(4).adds(5);
         then(theCalculator).shows(9);
     }
-
-    // end::simpleaddition[]
 
     @Test
     public void scenarioMultiply() {
@@ -60,6 +57,4 @@ public class FeatureCalculator {
         then(theCalculator).shows(16);
     }
 
-// tag::simpleaddition[]
 }
-// end::simpleaddition[]

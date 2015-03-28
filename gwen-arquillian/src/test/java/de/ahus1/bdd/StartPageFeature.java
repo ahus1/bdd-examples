@@ -11,20 +11,15 @@ import org.openqa.selenium.WebDriver;
 
 import static com.shazam.gwen.Gwen.*;
 
-// tag::arquillian[]
 @RunWith(Arquillian.class)
 public class StartPageFeature {
 
-    // end::arquillian[]
     // This needs to be present so that Arquillian starts Graphene.
-    // tag::arquillian[]
     @Drone
     protected WebDriver browser;
 
     @Page
     private StartPage startPage;
-
-    // end::arquillian[]
 
     /**
      * The is the very simple test.
@@ -55,7 +50,6 @@ public class StartPageFeature {
      * that <code>when()</code> is again on its own line starting correctly
      * indented.
      */
-// tag::arquillian[]
     @Test
     public void szenarioSearchWithMatches() {
         given(startPage).isOpenedInBrowser();
@@ -65,4 +59,3 @@ public class StartPageFeature {
     }
 
 }
-// end::arquillian[]

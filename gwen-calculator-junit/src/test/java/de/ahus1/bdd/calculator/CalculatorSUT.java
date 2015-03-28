@@ -1,7 +1,5 @@
 package de.ahus1.bdd.calculator;
 
-// tag::calcsut[]
-
 import com.shazam.gwen.collaborators.Actor;
 import com.shazam.gwen.collaborators.Arranger;
 import com.shazam.gwen.collaborators.Asserter;
@@ -43,13 +41,11 @@ public class CalculatorSUT implements
 
     public class CalculatorArranger implements Arranger {
 
-        // end::calcsut[]
         public CalculatorArranger isInitializedWith(long val) {
             device.set(val);
             return this;
         }
 
-        // tag::calcsut[]
         public void turnedOn() {
             device.reset();
         }
@@ -82,4 +78,3 @@ public class CalculatorSUT implements
 
     }
 }
-// end::calcsut[]

@@ -7,7 +7,6 @@ import cucumber.api.java.en.When;
 import static org.fest.assertions.Assertions.assertThat;
 
 
-// tag::steps[]
 public class CucumberSteps {
     Calculator c;
 
@@ -28,4 +27,3 @@ public class CucumberSteps {
         assertThat(c.getState()).isEqualTo(result);
     }
 }
-// end::steps[]
