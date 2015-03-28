@@ -17,6 +17,8 @@ There is a longer article (in German) covering [benefits of Gwen](http://www.hei
   * [JBehave](jbehave-simple)
   * [ScalaTest w/ FeatureSpec](scalatest-featurespec)
 
+Travis CI build status: [![Build Status](https://travis-ci.org/ahus1/bdd-examples.svg?branch=master)](https://travis-ci.org/ahus1/bdd-examples)
+
 License
 ====
 
