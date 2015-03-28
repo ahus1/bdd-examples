@@ -1,3 +1,5 @@
+:imagesdir: src/doc
+
 = Example for JGiven with Arquillian Graphene
 
 == About
@@ -22,6 +24,13 @@ Install maven and run as follows:
 
    mvn clean verify
 
-To look at the results, open `target/jgiven-reports/html/index.html`.
+To look at the results, open `target/jgiven-reports/html/index.html` to see <<report,the report>>.
 
-Alternatively, you can run `StartPageFeature.java` as a Unit test from you IDE.
+Alternatively, you can run `StartPageFeature.java` as a Unit test from your IDE.
+
+== Example Result
+
+[[report]]
+[.thumb]
+.Example HTML report created by JGiven
+image::report_screenshot.png[JGiven Report]
