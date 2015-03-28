@@ -13,20 +13,30 @@ This example will start a local browser and will run some tests on a web site.
 
 The following features are shown in this example (see `StartPageFeature.java`):
 
-== How to run
+== How to run from command line and continuous integration
+
+Install maven and run as follows:
+
+   mvn clean verify
+
+This will download http://phantomjs.org/[Phantom^] to run headless browser tests and run the tests using the `arquillian-headless.xml` settings.
+
+To look at the results, open `target/jgiven-reports/html/index.html` to see <<report,the report>>.
+
+== How to run from your IDE
+
+According to `arquillian.xml` interactive tests will use a locally running Selenium server that will forward requests to a locally installed instance of Firefox.
+
+Preparation:
 
   . ensure that Firefox is installed on the local machine
   . follow the instructions in `selenium/README-selenium.md` to download the most recent
     selenium JAR file
   . start `selenium/selenium.bat`
 
-Install maven and run as follows:
+Running a Unit test from your IDE:
 
-   mvn clean verify
-
-To look at the results, open `target/jgiven-reports/html/index.html` to see <<report,the report>>.
-
-Alternatively, you can run `StartPageFeature.java` as a Unit test from your IDE.
+  . run `StartPageFeature.java` like you would run any other unit test.
 
 == Example Result
 

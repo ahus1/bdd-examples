@@ -62,9 +62,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>net.bytebuddy</groupId>
-            <artifactId>byte-buddy</artifactId>
-            <version>0.3.1</version>
+            <groupId>org.jboss.arquillian.extension</groupId>
+            <artifactId>arquillian-phantom-binary</artifactId>
+            <version>1.9.7</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -87,6 +88,12 @@
                     <includes>
                         <include>**/*Feature.java</include>
                     </includes>
+                    <systemProperties>
+                        <property>
+                            <name>arquillian.xml</name>
+                            <value>arquillian-headless.xml</value>
+                        </property>
+                    </systemProperties>
                 </configuration>
             </plugin>
             <plugin>
