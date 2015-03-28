@@ -1,7 +1,8 @@
-package de.ahus1.bdd.website;
+package de.ahus1.bdd.stage;
 
 import com.tngtech.jgiven.Stage;
 import com.tngtech.jgiven.annotation.ExpectedScenarioState;
+import de.ahus1.bdd.website.ResultPage;
 
 import static org.fest.assertions.Assertions.assertThat;
 

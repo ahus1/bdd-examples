@@ -2,10 +2,10 @@ package de.ahus1.bdd;
 
 import com.tngtech.jgiven.annotation.ScenarioStage;
 import com.tngtech.jgiven.junit.ScenarioTest;
-import de.ahus1.bdd.website.GivenStartPage;
-import de.ahus1.bdd.website.ThenResultPage;
-import de.ahus1.bdd.website.ThenStartPage;
-import de.ahus1.bdd.website.WhenStartPage;
+import de.ahus1.bdd.stage.GivenStartPage;
+import de.ahus1.bdd.stage.ThenResultPage;
+import de.ahus1.bdd.stage.ThenStartPage;
+import de.ahus1.bdd.stage.WhenStartPage;
 import org.jboss.arquillian.drone.api.annotation.Drone;
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.Test;
