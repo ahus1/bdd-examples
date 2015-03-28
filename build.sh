@@ -10,6 +10,10 @@ cd gwen-calculator-testng
 mvn clean test || exit $?
 cd ..
 
+cd gwen-calculator-scalatest
+mvn clean test || exit $?
+cd ..
+
 cd gwen-arquillian
 mvn clean test || exit $?
 cd ..
