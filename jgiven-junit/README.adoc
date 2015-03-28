@@ -20,13 +20,13 @@ The following features are shown in this example (see `FeatureCalculator.java`):
 
 Install maven and run as follows:
 
-   mvn clean test
-   mvn jgiven:report
+   mvn clean verify
 
-To look at the results, open the folder `target/jgiven-reports/html` to see <<report>>.
+To look at the results, open the folder `target/jgiven-reports/html/index.html` to see <<report,the report>>.
 
 == Example Result
 
 [[report]]
 .Example HTML reports created by JGiven
+[.thumb]
 image::report_screenshot.png[JGiven Report]

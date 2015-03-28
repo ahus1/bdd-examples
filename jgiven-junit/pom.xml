@@ -80,24 +80,26 @@
                         </includes>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>com.tngtech.jgiven</groupId>
-                    <artifactId>jgiven-maven-plugin
-                    </artifactId>
-                    <version>0.7.0</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>report</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <format>html</format>
-                    </configuration>
-                </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.tngtech.jgiven</groupId>
+                <artifactId>jgiven-maven-plugin
+                </artifactId>
+                <version>0.7.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <format>html5</format>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
