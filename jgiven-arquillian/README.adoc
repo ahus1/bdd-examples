@@ -1,0 +1,36 @@
+:imagesdir: src/doc
+
+= Example for JGiven with Arquillian Graphene
+
+== About
+
+This show an example on how to integrate http://jgiven.org[JGiven^]
+with http://arquillian.org/modules/graphene-extension/[Arquillian Graphene^]
+
+This example will start a local browser and will run some tests on a web site.
+
+== Features
+
+The following features are shown in this example (see `StartPageFeature.java`):
+
+== How to run
+
+  . ensure that Firefox is installed on the local machine
+  . follow the instructions in `selenium/README-selenium.md` to download the most recent
+    selenium JAR file
+  . start `selenium/selenium.bat`
+
+Install maven and run as follows:
+
+   mvn clean verify
+
+To look at the results, open `target/jgiven-reports/html/index.html` to see <<report,the report>>.
+
+Alternatively, you can run `StartPageFeature.java` as a Unit test from your IDE.
+
+== Example Result
+
+[[report]]
+[.thumb]
+.Example HTML report created by JGiven
+image::report_screenshot.png[JGiven Report]
