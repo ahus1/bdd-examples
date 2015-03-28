@@ -61,7 +61,7 @@ public class StartPageFeature {
         given(startPage).isOpenedInBrowser();
         ResultPage resultPage =
                 when(startPage).searchesFor("bdd");
-        then(resultPage).showsAResultCountOf(3);
+        then(resultPage).showsAResultCountOf(1);
     }
 
 }

@@ -13,18 +13,29 @@ The following features are shown in this example (see `StartPageFeature.java`):
 
 . you find all test steps in the page objects
 
-== How to run
-
-  . ensure that Firefox is installed on the local machine
-  . follow the instructions in `selenium/README-selenium.md` to download the most recent
-    selenium JAR file
-  . start `selenium/selenium.bat`
+== How to run from command line and continuous integration
 
 Install maven and run as follows:
 
    mvn clean test
    mvn surefire-report:report-only
 
+This will download http://phantomjs.org/[Phantom^] to run headless browser tests and run the tests using the `arquillian-headless.xml` settings.
+
 To look at the results, open the folder `target/site/surefire-report.html`.
 
-Alternatively, you can run `StartPageFeature.java` as a Unit test from you IDE.
+== How to run from your IDE
+
+According to `arquillian.xml` interactive tests will use a locally running Selenium server that will forward requests to a locally installed instance of Firefox.
+
+Preparation:
+
+  . ensure that Firefox is installed on the local machine
+  . follow the instructions in `selenium/README-selenium.md` to download the most recent
+    selenium JAR file
+  . start `selenium/selenium.bat`
+
+Running a Unit test from your IDE:
+
+  . run `StartPageFeature.java` like you would run any other unit test.
+

@@ -61,6 +61,12 @@
             <type>pom</type>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.extension</groupId>
+            <artifactId>arquillian-phantom-binary</artifactId>
+            <version>1.9.7</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -82,6 +88,12 @@
                     <includes>
                         <include>**/*Feature.java</include>
                     </includes>
+                    <systemProperties>
+                        <property>
+                            <name>arquillian.xml</name>
+                            <value>arquillian-headless.xml</value>
+                        </property>
+                    </systemProperties>
                 </configuration>
             </plugin>
         </plugins>

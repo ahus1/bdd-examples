@@ -1,12 +1,22 @@
 cd cucumber-simple
-mvn test || exit $?
+mvn clean test || exit $?
 cd ..
+
 cd gwen-calculator-junit
-mvn test || exit $?
+mvn clean test || exit $?
 cd ..
+
+cd gwen-calculator-testng
+mvn clean test || exit $?
+cd ..
+
+cd gwen-arquillian
+mvn clean test || exit $?
+cd ..
+
 cd jgiven-junit
-mvn test || exit $?
+mvn clean test || exit $?
 cd ..
 cd jgiven-arquillian
-mvn test || exit $?
+mvn clean verify || exit $?
 cd ..
