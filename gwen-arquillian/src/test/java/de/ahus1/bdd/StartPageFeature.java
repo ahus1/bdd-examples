@@ -5,8 +5,10 @@ import de.ahus1.bdd.website.StartPage;
 import org.jboss.arquillian.drone.api.annotation.Drone;
 import org.jboss.arquillian.graphene.page.Page;
 import org.jboss.arquillian.junit.Arquillian;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
 import static com.shazam.gwen.Gwen.*;
@@ -20,6 +22,11 @@ public class StartPageFeature {
 
     @Page
     private StartPage startPage;
+
+    @Before
+    public void setup() {
+        browser.manage().window().setSize(new Dimension(1200,800));
+    }
 
     /**
      * The is the very simple test.
@@ -55,7 +62,7 @@ public class StartPageFeature {
         given(startPage).isOpenedInBrowser();
         ResultPage resultPage =
                 when(startPage).searchesFor("bdd");
-        then(resultPage).showsAResultCountOf(1);
+        then(resultPage).showsAResultCountOf(2);
     }
 
 }
