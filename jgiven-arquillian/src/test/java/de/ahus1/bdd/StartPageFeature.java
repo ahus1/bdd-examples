@@ -8,8 +8,10 @@ import de.ahus1.bdd.stage.ThenStartPage;
 import de.ahus1.bdd.stage.WhenStartPage;
 import org.jboss.arquillian.drone.api.annotation.Drone;
 import org.jboss.arquillian.junit.Arquillian;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(Arquillian.class)
@@ -21,6 +23,11 @@ public class StartPageFeature extends ScenarioTest<GivenStartPage, WhenStartPage
     // here we inject a 4th scenario stage using the @ScenarioStage annotation
     @ScenarioStage
     private ThenResultPage thenResultPage;
+
+    @Before
+    public void setup() {
+        browser.manage().window().setSize(new Dimension(1200,800));
+    }
 
     /**
      * The is the very simple test.
