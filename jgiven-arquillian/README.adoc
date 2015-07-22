@@ -13,6 +13,10 @@ This example will start a local browser and will run some tests on a web site.
 
 The following features are shown in this example (see `StartPageFeature.java`):
 
+  . Run Selenium via PhantomJS headless or interactively from IDE
+  . Using both Given/When/Then concept together with the PageObject pattern used in selenium
+  . Annotating the executed tests with screen shots
+
 == How to run from command line and continuous integration
 
 Install maven and run as follows:

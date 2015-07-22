@@ -34,7 +34,7 @@
         <dependency>
             <groupId>com.tngtech.jgiven</groupId>
             <artifactId>jgiven-junit</artifactId>
-            <version>0.7.0</version>
+            <version>0.7.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
