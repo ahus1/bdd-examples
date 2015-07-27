@@ -1,6 +1,5 @@
 package de.ahus1.bdd.website;
 
-import com.google.common.net.MediaType;
 import com.tngtech.jgiven.attachment.Attachment;
 import org.jboss.arquillian.drone.api.annotation.Drone;
 import org.jboss.arquillian.graphene.fragment.Root;
@@ -12,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static org.fest.assertions.Fail.fail;
+import static org.assertj.core.api.Fail.fail;
 
 public class ResultPage {
 

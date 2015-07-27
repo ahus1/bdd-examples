@@ -4,9 +4,8 @@ import com.tngtech.jgiven.CurrentStep;
 import com.tngtech.jgiven.Stage;
 import com.tngtech.jgiven.annotation.ExpectedScenarioState;
 import de.ahus1.bdd.website.ResultPage;
-import org.jboss.arquillian.graphene.Graphene;
 
-import static org.fest.assertions.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ThenResultPage extends Stage<ThenResultPage> {
 

@@ -5,7 +5,7 @@ import com.tngtech.jgiven.annotation.ExpectedScenarioState;
 import com.tngtech.jgiven.annotation.Quoted;
 import de.ahus1.bdd.website.StartPage;
 
-import static org.fest.assertions.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ThenStartPage extends Stage<ThenStartPage> {
 
