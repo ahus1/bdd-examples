@@ -9,7 +9,7 @@
     <name>JGiven Stories</name>
 
     <properties>
-        <jgiven.version>0.7.0</jgiven.version>
+        <jgiven.version>0.8.0</jgiven.version>
     </properties>
 
     <dependencies>
@@ -87,18 +87,53 @@
                 <groupId>com.tngtech.jgiven</groupId>
                 <artifactId>jgiven-maven-plugin
                 </artifactId>
-                <version>0.7.0</version>
+                <version>${jgiven.version}</version>
                 <executions>
                     <execution>
+                        <id>html5</id>
                         <goals>
                             <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <format>html5</format>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>asciidoc</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <format>asciidoc</format>
+                            <outputDirectory>target/jgiven-reports/asciidoc</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>1.5.2</version>
+                <executions>
+                    <execution>
+                        <id>output-html</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <format>html5</format>
+                    <sourceHighlighter>coderay</sourceHighlighter>
+                    <sourceDirectory>target/jgiven-reports/asciidoc</sourceDirectory>
+                    <sourceDocumentName>index.asciidoc</sourceDocumentName>
+                    <outputDirectory>target/jgiven-reports/asciidochtml</outputDirectory>
+                    <backend>html</backend>
+                    <doctype>book</doctype>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 

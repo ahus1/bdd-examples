@@ -13,8 +13,10 @@ The following features are shown in this example (see `FeatureCalculator.java`):
 . you use standard `@Test` syntax as you would use for JUnit
 . you use a fluent syntax with reusable states in separate classes
 . state between the given/when/then stages is shared between objects using injection
-. nice support for not yet implemented scenarios using `@NotImplementedYet` annotation
-. very nice HTML output of the report
+. nice support for not yet implemented scenarios using `@Pending` annotation
+. very nice HTML output of the report, including output of attachments (please see the JGiven Arquillian example project for this).
+
+A feature in progress is the rendering of the Gherkin in the Asciidoc format.
 
 == How to run
 

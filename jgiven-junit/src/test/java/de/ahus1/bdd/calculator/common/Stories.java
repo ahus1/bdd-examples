@@ -5,9 +5,6 @@ import com.tngtech.jgiven.annotation.IsTag;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-@IsTag(descriptionGenerator = StoryDescriptionGenerator.class)
+@IsTag(name = "Stories")
 @Retention( RetentionPolicy.RUNTIME )
-@Stories
-public @interface Story {
-    String[] value();
-}
+public @interface Stories { }

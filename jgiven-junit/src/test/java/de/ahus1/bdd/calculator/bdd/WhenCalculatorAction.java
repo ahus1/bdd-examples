@@ -6,9 +6,6 @@ import de.ahus1.bdd.calculator.Calculator;
 
 import java.util.List;
 
-/**
- * Created by schwarta on 21.03.2015.
- */
 public class WhenCalculatorAction<SELF extends WhenCalculatorAction<?>> extends Stage<SELF> {
 
     @ExpectedScenarioState

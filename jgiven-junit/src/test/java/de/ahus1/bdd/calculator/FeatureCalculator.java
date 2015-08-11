@@ -1,12 +1,11 @@
 package de.ahus1.bdd.calculator;
 
-import com.tngtech.jgiven.annotation.NotImplementedYet;
+import com.tngtech.jgiven.annotation.Pending;
 import com.tngtech.jgiven.junit.ScenarioTest;
 import de.ahus1.bdd.calculator.bdd.GivenCalculatorStage;
 import de.ahus1.bdd.calculator.bdd.ThenCalculatorOutcome;
 import de.ahus1.bdd.calculator.bdd.WhenCalculatorAction;
 import de.ahus1.bdd.calculator.common.Story;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.Test;
 
 @Story("To avoid stupid calculation errors I use a calculator")
@@ -35,7 +34,7 @@ public class FeatureCalculator extends ScenarioTest<GivenCalculatorStage<?>,
     }
 
     @Test
-    @NotImplementedYet("do this later")
+    @Pending("do this later")
     public void sinus() {
     }
 
