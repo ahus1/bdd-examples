@@ -5,6 +5,6 @@ import com.tngtech.jgiven.annotation.IsTag;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-@IsTag(name = "Stories")
-@Retention( RetentionPolicy.RUNTIME )
+@IsTag
+@Retention(RetentionPolicy.RUNTIME)
 public @interface Stories { }

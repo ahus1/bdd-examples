@@ -13,21 +13,21 @@ public class FeatureCalculator extends ScenarioTest<GivenCalculatorStage<?>,
         WhenCalculatorAction<?>, ThenCalculatorOutcome<?>> {
 
     @Test
-    public void addition() {
+    public void should_cope_with_additions() {
         given().turned_on();
         when().adds(4).and().adds(5);
         then().shows(9);
     }
 
     @Test
-    public void multiply() {
+    public void should_cope_with_multiplications() {
         given().turned_on().and().initialized_with_$_state(2);
         when().multiplies_by(2);
         then().shows(4);
     }
 
     @Test
-    public void power() {
+    public void should_cope_with_exponentials() {
         given().turned_on().and().initialized_with_$_state(4);
         when().powerBy(2);
         then().shows(16);
@@ -35,7 +35,7 @@ public class FeatureCalculator extends ScenarioTest<GivenCalculatorStage<?>,
 
     @Test
     @Pending("do this later")
-    public void sinus() {
+    public void should_cope_with_sinus_calculations() {
     }
 
 }

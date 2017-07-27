@@ -9,7 +9,7 @@
     <name>JGiven Stories</name>
 
     <properties>
-        <jgiven.version>0.8.0</jgiven.version>
+        <jgiven.version>0.15.1</jgiven.version>
     </properties>
 
     <dependencies>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>2.0.0</version>
+            <version>3.8.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -90,50 +90,16 @@
                 <version>${jgiven.version}</version>
                 <executions>
                     <execution>
-                        <id>html5</id>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <configuration>
-                            <format>html5</format>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>asciidoc</id>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <configuration>
-                            <format>asciidoc</format>
-                            <outputDirectory>target/jgiven-reports/asciidoc</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.asciidoctor</groupId>
-                <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>1.5.2</version>
-                <executions>
-                    <execution>
-                        <id>output-html</id>
                         <phase>verify</phase>
                         <goals>
-                            <goal>process-asciidoc</goal>
+                            <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <sourceHighlighter>coderay</sourceHighlighter>
-                    <sourceDirectory>target/jgiven-reports/asciidoc</sourceDirectory>
-                    <sourceDocumentName>index.asciidoc</sourceDocumentName>
-                    <outputDirectory>target/jgiven-reports/asciidochtml</outputDirectory>
-                    <backend>html</backend>
-                    <doctype>book</doctype>
+                    <format>html5</format>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
