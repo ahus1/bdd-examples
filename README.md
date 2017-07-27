@@ -5,6 +5,7 @@ This contains some examples to show how Behaviour Driven Development (BDD) can l
 
 There is a longer article (in German) covering [benefits of Gwen](http://www.heise.de/developer/artikel/Gwen-BDD-Framework-fuer-lesbare-und-refaktorisierbare-Tests-in-Java-2520872.html)
 
+  * [JUnit BDD Style](junit-bddstyle)
   * [Cucumber](cucumber-simple)
   * Gwen (by Shazam)
     * [Gwen w/ JUnit](gwen-calculator-junit)
@@ -22,7 +23,7 @@ Travis CI build status: [![Build Status](https://travis-ci.org/ahus1/bdd-example
 License
 ====
 
-Copyright 2014, 2015 Alexander Schwartz
+Copyright 2014-2017 Alexander Schwartz
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
