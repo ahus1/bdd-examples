@@ -6,7 +6,7 @@
         <property name="remoteReusable">true</property>
         <property name="remoteAddress">http://localhost:9515/</property>
         <property name="browser">chrome</property>
-        <property name="chromeArguments">--headless</property>
+        <property name="chromeArguments">--headless --window-size=1920,1080</property>
     </extension>
 
     <!--

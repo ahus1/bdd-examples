@@ -1,17 +1,12 @@
 package de.ahus1.bdd.website;
 
-import org.jboss.arquillian.drone.api.annotation.Drone;
 import org.jboss.arquillian.graphene.Graphene;
 import org.jboss.arquillian.graphene.page.Location;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Location("http://www.ahus1.de")
-public class StartPage {
-
-    @Drone
-    private WebDriver browser;
+public class StartPage extends AbstractPage {
 
     @FindBy(className = "search-button")
     private WebElement searchButton;
@@ -19,23 +14,22 @@ public class StartPage {
     @FindBy(className = "search-input")
     private WebElement searchInput;
 
-    @FindBy(css = "body")
-    private WebElement root;
-
     @FindBy(css = "h1")
     private WebElement contentHeading;
 
     public ResultPage search(String term) {
-        Graphene.waitGui().until().element(contentHeading).is().visible();
+        Graphene.waitGui().until().element(searchInput).is().visible();
         searchInput.sendKeys(term);
         searchButton.click();
-        ResultPage resultPage = Graphene.createPageFragment(ResultPage.class,
-            root);
-        resultPage.verify();
-        return resultPage;
+        return instanceOfPage(ResultPage.class);
     }
 
     public String getTitle() {
         return contentHeading.getText();
+    }
+
+    @Override
+    public void verify() {
+        Graphene.waitGui().until().element(contentHeading).is().visible();
     }
 }

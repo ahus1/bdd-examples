@@ -1,11 +1,5 @@
 package de.ahus1.bdd.website;
 
-import com.tngtech.jgiven.attachment.Attachment;
-import org.jboss.arquillian.drone.api.annotation.Drone;
-import org.jboss.arquillian.graphene.fragment.Root;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,13 +7,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Fail.fail;
 
-public class ResultPage {
-
-    @Drone
-    protected WebDriver browser;
-
-    @Root
-    private WebElement root;
+public class ResultPage extends AbstractPage {
 
     @FindBy(css = "#content ul li")
     private List<WebElement> results;
@@ -38,10 +26,4 @@ public class ResultPage {
         }
     }
 
-    public Attachment createScreenshot() {
-        byte[] screenshot = ((TakesScreenshot) browser).getScreenshotAs(OutputType.BYTES);
-        return Attachment
-                .fromBinaryBytes(screenshot, com.tngtech.jgiven.attachment.MediaType.PNG)
-                .withTitle("screenshot result page");
-    }
 }
