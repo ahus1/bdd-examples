@@ -3,6 +3,7 @@ jdk:
   - oraclejdk8
 script: ./build.sh
 sudo: false
+dist: trusty
 addons:
   chrome: stable
 cache:
