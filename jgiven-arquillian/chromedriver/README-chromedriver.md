@@ -1,0 +1,17 @@
+# Running Chromedriver
+
+## Idea
+
+Using this standalone Chromedriver it is a lot easier to update it to a version matching your Chrome installation. 
+It will also enable you to configure your local environment (instead of keeping this information within your project).
+
+## Running
+
+In order to run, download the latest ChromeDriver from 
+
+[https://sites.google.com/a/chromium.org/chromedriver/downloads](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+
+and place it in this folder.
+
+You can then start a standalone remote Chrome driver using the `cdriver.bat` batch file you find in this folder.
+

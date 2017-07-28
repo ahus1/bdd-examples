@@ -6,7 +6,7 @@
     <groupId>de.ahus1</groupId>
     <artifactId>jgiven-simple</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>JGiven Stories</name>
+    <name>JUnit BDD Style Tests</name>
 
     <dependencies>
         <dependency>

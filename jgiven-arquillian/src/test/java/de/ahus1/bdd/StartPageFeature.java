@@ -33,7 +33,7 @@ public class StartPageFeature extends ScenarioTest<GivenStartPage, WhenStartPage
      * The is the very simple test.
      */
     @Test
-    public void the_start_page_can_be_opened() {
+    public void should_show_the_start_page() {
         given().the_start_page_is_opened_in_browser();
         then().the_page_title_is("Willkommen!");
     }
@@ -42,7 +42,7 @@ public class StartPageFeature extends ScenarioTest<GivenStartPage, WhenStartPage
      * This shows the usage of a 4th stage that is injected using @ScenarioStage
      */
     @Test
-    public void searching_works() {
+    public void should_have_working_search_capability() {
         given().the_start_page_is_opened_in_browser();
         when().searching_for("hystrix");
         thenResultPage

@@ -5,12 +5,15 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * As a user I want to use a calculator to avoid silly mistakes.
+ */
 public class FeatureCalculator {
 
     @Test
     public void should_cope_with_additions() {
         // given ...
-        // ... a turned on calculator
+        // ... a just turned on calculator
         Calculator c = new Calculator();
 
         // when ...
@@ -19,6 +22,19 @@ public class FeatureCalculator {
 
         // then ...
         assertThat(c.getState()).isEqualTo(9);
+    }
+
+    @Test
+    public void should_accept_setting_current_state() {
+        // given ...
+        // ... a turned on calculator
+        Calculator c = new Calculator();
+
+        // when ...
+        c.set(2);
+
+        // then ...
+        assertThat(c.getState()).isEqualTo(2);
     }
 
     @Test
