@@ -8,7 +8,7 @@ public class Calculator {
     }
 
     public void add(long val) {
-        state += val;
+        state = Math.addExact(state, val);
     }
 
     public long getState() {
@@ -20,7 +20,7 @@ public class Calculator {
     }
 
     public void multiplyBy(long val) {
-        state *= val;
+        state = Math.multiplyExact(state, val);
     }
 
     public void power(long val) {

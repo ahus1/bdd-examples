@@ -4,9 +4,14 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 /**
  * As a user I want to use a calculator to avoid silly mistakes.
+ *
+ * ... use prefix "should_" to describe desired behavior
+ * ... use "_when_" for describing different situations (optional)
+ * ... prefix method name to indicate what method is being tested (but this is technical)
  */
 public class FeatureCalculator {
 
@@ -22,6 +27,34 @@ public class FeatureCalculator {
 
         // then ...
         assertThat(c.getState()).isEqualTo(9);
+    }
+
+    @Test
+    public void should_throw_exception_on_adding_when_numbers_are_too_big() {
+        // given ...
+        // ... a just turned on calculator
+        Calculator c = new Calculator();
+
+        // when ...
+        c.add(Long.MAX_VALUE);
+        Throwable thrown = catchThrowable(() -> { c.add(1); });
+
+        // then ...
+        assertThat(thrown).hasMessageContaining("long overflow").isInstanceOf(ArithmeticException.class);
+    }
+
+    @Test
+    public void should_throw_exception_on_multiplying_when_numbers_are_too_big() {
+        // given ...
+        // ... a just turned on calculator
+        Calculator c = new Calculator();
+
+        // when ...
+        c.add(Long.MAX_VALUE);
+        Throwable thrown = catchThrowable(() -> { c.multiplyBy(2); });
+
+        // then ...
+        assertThat(thrown).hasMessageContaining("long overflow").isInstanceOf(ArithmeticException.class);
     }
 
     @Test
