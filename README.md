@@ -14,7 +14,7 @@ There is a longer article (in German) covering [benefits of Gwen](http://www.hei
     * [Gwen w/ ScalaTest](gwen-calculator-scalatest)
   * JGiven (by TNG)
     * [JGiven w/ JUnit](jgiven-junit)
-    * [JGiven w/ Arquillian](jgiven-simple)
+    * [JGiven w/ Arquillian](jgiven-arquillian)
   * [JBehave](jbehave-simple)
   * [ScalaTest w/ FeatureSpec](scalatest-featurespec)
 
