@@ -7,15 +7,22 @@ import de.ahus1.bdd.stage.ThenResultPage;
 import de.ahus1.bdd.stage.ThenStartPage;
 import de.ahus1.bdd.stage.WhenStartPage;
 import org.jboss.arquillian.drone.api.annotation.Drone;
-import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.junit.ArquillianTest;
+import org.jboss.arquillian.junit.ArquillianTestClass;
 import org.junit.Before;
+import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
-@RunWith(Arquillian.class)
 public class StartPageFeature extends ScenarioTest<GivenStartPage, WhenStartPage, ThenStartPage> {
+
+    @ClassRule
+    public static ArquillianTestClass arquillianTestClass = new ArquillianTestClass();
+
+    @Rule
+    public ArquillianTest arquillianTest = new ArquillianTest();
 
     @Drone
     protected WebDriver browser;
@@ -26,7 +33,7 @@ public class StartPageFeature extends ScenarioTest<GivenStartPage, WhenStartPage
 
     @Before
     public void setup() {
-        browser.manage().window().setSize(new Dimension(1200,800));
+        browser.manage().window().setSize(new Dimension(1200, 800));
     }
 
     /**
@@ -46,7 +53,7 @@ public class StartPageFeature extends ScenarioTest<GivenStartPage, WhenStartPage
         given().the_start_page_is_opened_in_browser();
         when().searching_for("hystrix");
         thenResultPage
-            .then().the_result_page_shows_a_result_count_of(3);
+                .then().the_result_page_shows_a_result_count_of(3);
     }
 
 }
