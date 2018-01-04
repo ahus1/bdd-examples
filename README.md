@@ -15,6 +15,7 @@ There is a longer article (in German) covering [benefits of Gwen](http://www.hei
   * JGiven (by TNG)
     * [JGiven w/ JUnit](jgiven-junit)
     * [JGiven w/ Arquillian](jgiven-arquillian)
+    * [JGiven w/ Spring Boot and Mockito](jgiven-mockito-spring)
   * [JBehave](jbehave-simple)
   * [ScalaTest w/ FeatureSpec](scalatest-featurespec)
 

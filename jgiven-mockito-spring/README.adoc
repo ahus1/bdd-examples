@@ -1,0 +1,146 @@
+:imagesdir: src/doc
+
+= Example for JGiven with Spring Boot
+
+== About
+
+This is a demo of http://jgiven.org/[JGiven^] together with http://site.mockito.org/[Mockito^] and https://projects.spring.io/spring-boot/[Spring Boot^].
+
+WARNING: This is an advanced example with several frameworks involved like you would experience it in a real project.
+This is not for the faint of heart!
+
+== The Application
+
+=== Scope
+
+This Spring Boot application gives you a web calculator that can be accessed from different users.
+
+The state of the calculator is shared by all users and is persisted in a JPA database (H2-in-memory only for now).
+
+Each user has the following options using the GUI:
+
+ * reset
+ * increment
+ * refresh (to see if someone else has changed the calculator)
+
+=== Development Environment
+
+This example application makes use of http://mapstruct.org[MapStruct^] and https://projectlombok.org[Lombok^].
+Please install the necessary plugins in your IDE and enable annotation processors.
+
+=== Running the application
+
+Use the following command to run the application:
+
+----
+mvn spring-boot:run
+----
+
+Once the application is running you can open it in your browser using the URL +
+http://localhost:8080
+
+You will see the following content in your browser:
+
+.Demo App
+[.thumb]
+image::screenshot_app.png[JGiven Report]
+
+=== Design of the Application
+
+This demo application is using a hexagonal structure, also known as ports-and-adapters design.
+See http://fideloper.com/hexagonal-architecture[this blob post^] for more information.
+
+The core application functionality, the Calculator, resides in a package called "domain".
+
+The domain can be accessed by a facade that resides in the "application" package.
+The facade takes care of orchestrating different calls within the "domain" package (in this case: retrieving the state from the repository and re-activating it).
+
+Then there are different adapters.
+There are different adapters
+
+* to start the application from the command line
+* to store its data in JPA and
+* to access the functionality via REST.
+
+Each adapter must not communicate with any other adapter.
+It must only access the classes in the domain through the facade provided by "application".
+
+An adapter can provide implementations for interfaces defined in the "domain".
+The JPA adapter for example provides an implementation for the Repository.
+Using inversion-of-control these implementations are injected where needed.
+
+Once an adapter connects to the outside (either the database or a REST endpoint in this case), it will map the internal domain object to an external representation:
+The REST adapter will map to DTO instances, the repository adapter will map to JPA instances.
+The mapping serves as an anti-corruption layer.
+This way the domain object can change when the business functionality requires this.
+It also keeps the domain objects clean from JPA and JSON annotations.
+
+== Implemented Tests
+
+To test this application several different tests have been implemented.
+Each test has a different focus what it will test.
+The more infrastructure a test creates, the slower it will run.
+Some test use JGiven to show nice BDD-reports to the owner of the application.
+Other tests are just technical Unit tests that don't provide BDD reports.
+
+Even the technical unit tests could have used JGiven, but this is something that needs to be decided on a per-project basis.
+In this project they are shown side-by-side for educational purposes.
+
+CalculatorResourceTest::
+This test uses _@WebMvcTest_ to create a minimal Spring context without web and JPA elements.
+The facade _CalculatorApplication_ is mocked so only the _CalculatorResource_ and the connected Mappers are tested.
+As some classpath scanning is done, the speed is "medium".
+
+CalculatorRepositoryTest::
+This test uses _@DataJpaTest_ to create a minimal Spring context with only JPA elements and the repository.
+It tests all API methods of _CalculatorRepository_ against a database.
+As database migration scripts will run as well as some classpath scanning, the speed is "medium".
+
+FeatureCalculatorDomain::
+This tests the functionality in the domain.
+All adapters that are injected are mocked, in this case the _CalculatorRepository_.
+As this is of interest to the business and contains business rules, it is implemented as a JGiven test.
+This test doesn't need Spring, therefore it uses Mockito's  lightweight injection mechannism.
+The magic in this test case happens in _GivenCalculatorDomainStage_ -- please have a look.
+This test is very fast, as no Spring context needs to be initialized.
+
+FeatureCalculatorContainer::
+This tests end-to-end REST calls to the APIs.
+For this the web and the JPA context are started.
+It uses JGiven to inject Spring beans into the different Stages.
+This can be quite useful.
+This kind of test is rather slow.
+A variant of this test could mock some of the beans to provide static resources. Usually the facade in "application" is a good place to mock.
+
+FeatureCalculatorGui::
+This tests end-to-end including the GUI.
+For a GUI-Test it runs Chrome and Selenium.
+This behaves like the JGiven arquillian example:
+When you run this on the command line, it will run the tests headless.
+When you run the test in your IDE, you'll need to start the chromedriver first.
+Please see the sub-folder _chromedriver_ for details how to do this.
+A variant of this test could mock some of the beans to provide static resources. Usually the facade in "application" is a good place to mock.
+
+== How to run the tests
+
+Install maven and run as follows:
+
+----
+mvn verify
+----
+
+To look at the results, open the folder `target/jgiven-reports/html/index.html` to see <<report,the report>>.
+
+This reports will only contain the JGiven tests, not the standard JUnit tests.
+
+For the report of all tests (JGiven and JUnit) see `target/site/surefire-report.html`.
+
+WARNING: The timing shown in the overall surefire reports doesn't necessarily show the initialization time of the Spring Boot contexts.
+You will only notice the startup times when you run the tests in your IDE.
+
+== Example Result
+
+[[report]]
+.Example HTML reports created by JGiven
+[.thumb]
+image::report_screenshot.png[JGiven Report]

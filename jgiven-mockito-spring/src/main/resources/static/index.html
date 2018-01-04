@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+</head>
+<body>
+<h1>Calculator App</h1>
+This is a dummy application that allows you to increment a calculator's counter.
+<div id="app" v-cloak>
+    Current Calculator state: <span id="state">{{ state }}</span><br />
+    <div v-if="error" style="color: red">{{error}}</div>
+    <button id="reset" @click="reset">reset</button>
+    <button id="refresh" @click="refresh">refresh</button>
+    <button id="increment" @click="increment">increment</button>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
