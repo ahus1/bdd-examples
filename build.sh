@@ -24,5 +24,9 @@ mvn -B clean test || exit $?
 cd ..
 
 cd jgiven-arquillian
-mvn -B clean verify || exit $?
+xvfb-run mvn -B clean verify || exit $?
+cd ..
+
+cd jgiven-mockito-spring
+xvfb-run mvn -B clean verify || exit $?
 cd ..
