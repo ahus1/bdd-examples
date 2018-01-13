@@ -11,6 +11,7 @@ public class WhenCalculatorDomainAction<SELF extends WhenCalculatorDomainAction<
 
     public SELF adds(long aNumber) {
         calculatorApplication.add(aNumber);
+        // every step can use Mockito's verify() to check the mocks, although this doesn't seem to be of much use here.
         return self();
     }
 
