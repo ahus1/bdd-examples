@@ -1,6 +1,5 @@
 package de.ahus1.bdd.calculator.unitstyle.rest;
 
-import com.tngtech.jgiven.annotation.BeforeStage;
 import de.ahus1.bdd.calculator.adapter.commandline.CommandLine;
 import de.ahus1.bdd.calculator.adapter.rest.CalculatorStateDto;
 import de.ahus1.bdd.calculator.application.CalculatorApplication;
@@ -14,7 +13,6 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -34,6 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  * Ensure that the REST resource and all mappers call the application layer as expected.
+ *
  * @author Alexander Schwartz 2018
  */
 @RunWith(SpringRunner.class)

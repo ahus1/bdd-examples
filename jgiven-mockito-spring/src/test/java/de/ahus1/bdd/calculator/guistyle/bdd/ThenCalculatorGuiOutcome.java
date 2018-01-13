@@ -1,18 +1,12 @@
 package de.ahus1.bdd.calculator.guistyle.bdd;
 
-import com.jayway.restassured.RestAssured;
-import com.jayway.restassured.specification.RequestSpecification;
 import com.tngtech.jgiven.Stage;
 import com.tngtech.jgiven.annotation.ProvidedScenarioState;
 import com.tngtech.jgiven.integration.spring.JGivenStage;
-import de.ahus1.bdd.calculator.adapter.rest.CalculatorStateDto;
 import de.ahus1.bdd.calculator.application.CalculatorApplication;
 import de.ahus1.bdd.calculator.guistyle.website.StartPage;
-import org.apache.http.HttpStatus;
-import org.assertj.core.api.Assertions;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.SpyBean;
 
 @JGivenStage
 public class ThenCalculatorGuiOutcome<SELF extends ThenCalculatorGuiOutcome<?>> extends Stage<SELF> {
