@@ -1,6 +1,6 @@
 :imagesdir: src/doc
 
-= Example for JGiven programmed BDD style
+= Example for JUnit programmed BDD style
 
 == About
 
