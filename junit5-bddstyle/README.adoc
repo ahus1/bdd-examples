@@ -1,0 +1,21 @@
+:imagesdir: src/doc
+
+= Example for JUnit 5 programmed BDD style
+
+== About
+
+This uses only JUnit 5 to show how BDD style could look like.
+
+== Features
+
+Just JUnit:
+
+* Class names show the Feature being tested.
+* Methods show the intent of the test, utilizing underscores in method names for best readability.
+* Each method ist structured with given/when/then comments.
+
+== How to run
+
+Install maven and run as follows:
+
+   mvn clean test
