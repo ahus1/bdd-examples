@@ -9,7 +9,7 @@
     <name>JGiven Stories</name>
 
     <properties>
-        <jgiven.version>0.15.1</jgiven.version>
+        <jgiven.version>0.17.1</jgiven.version>
     </properties>
 
     <dependencies>
