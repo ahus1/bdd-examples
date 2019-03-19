@@ -15,8 +15,8 @@ public class ThenResultPage extends Stage<ThenResultPage> {
     @ExpectedScenarioState
     private CurrentStep currentStep;
 
-    public ThenResultPage the_result_page_shows_a_result_count_of(int i) {
-        assertThat(resultPage.getNumberOfsearchResults()).isEqualTo(i);
+    public ThenResultPage the_result_shows_at_least_$_results(int numResults) {
+        assertThat(resultPage.getNumberOfsearchResults()).isGreaterThan(numResults);
         currentStep.addAttachment(resultPage.createScreenshot());
         return this;
     }

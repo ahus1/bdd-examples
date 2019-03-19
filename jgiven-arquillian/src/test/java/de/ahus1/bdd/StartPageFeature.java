@@ -33,7 +33,7 @@ public class StartPageFeature extends ScenarioTest<GivenStartPage, WhenStartPage
 
     @Before
     public void setup() {
-        browser.manage().window().setSize(new Dimension(1200, 800));
+        browser.manage().window().setSize(new Dimension(1400, 900));
     }
 
     /**
@@ -42,7 +42,7 @@ public class StartPageFeature extends ScenarioTest<GivenStartPage, WhenStartPage
     @Test
     public void should_show_the_start_page() {
         given().the_start_page_is_opened_in_browser();
-        then().the_page_title_is("Willkommen!");
+        then().the_page_title_is("Google");
     }
 
     /**
@@ -53,7 +53,7 @@ public class StartPageFeature extends ScenarioTest<GivenStartPage, WhenStartPage
         given().the_start_page_is_opened_in_browser();
         when().searching_for("hystrix");
         thenResultPage
-                .then().the_result_page_shows_a_result_count_of(3);
+                .then().the_result_shows_at_least_$_results(3);
     }
 
 }
