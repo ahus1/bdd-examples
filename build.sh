@@ -18,9 +18,11 @@ cd gwen-calculator-scalatest
 mvn -B clean test
 cd ..
 
-# cd gwen-arquillian
+cd gwen-arquillian
+# Travis doesn't install latest Google Chrome any more
 # mvn -B clean test
-# cd ..
+mvn -B clean test-compile
+cd ..
 
 cd jgiven-junit
 mvn -B clean test
@@ -31,7 +33,9 @@ mvn -B clean test
 cd ..
 
 cd jgiven-arquillian
-mvn -B clean verify
+# Travis doesn't install latest Google Chrome any more
+# mvn -B clean verify
+mvn -B clean test-compile
 cd ..
 
 cd junit-bddstyle
