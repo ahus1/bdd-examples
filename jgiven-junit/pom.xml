@@ -10,7 +10,7 @@
 
     <properties>
         <jgiven.version>0.17.1</jgiven.version>
-        <log4j.version>2.13.3</log4j.version>
+        <log4j.version>2.15.0</log4j.version>
     </properties>
 
     <dependencies>
